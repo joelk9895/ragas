@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.marquee {
+  --gap: 1rem;
+  display: flex;
+  overflow: hidden;
+  align-items: baseline;
+  margin-top: 15rem;
+  width: 70vw;
+  user-select: none;
+  gap: var(--gap);
+  mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
+}
+.st0 {
+  fill: #252f3e;
+}
+.st1 {
+  fill: #f90;
+}
+.track {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 100%;
+  min-height: 100%;
+  gap: var(--gap);
+  animation: scroll 30s linear infinite;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+@layer base {
+  body {
+    @apply bg-white text-black dark:bg-black dark:text-white;
+  }
+}
