@@ -2,21 +2,19 @@
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { Inter } from "next/font/google";
-
+import { Tweet } from "react-tweet";
+import { tweets } from "../../Landing";
 const InterFont = Inter({
   subsets: ["latin"],
   display: "swap",
 });
 
-export const Tweet = ({
-  users,
+export const Tweets = ({
+  tweets,
   titleComponent,
 }: {
-  users: {
+  tweets: {
     tweet: string;
-    user: string;
-    handle: string;
-    profile?: string;
   }[];
   titleComponent: string | React.ReactNode;
 }) => {
@@ -61,7 +59,7 @@ export const Tweet = ({
           rotate={rotate}
           translate={translate}
           scale={scale}
-          users={users}
+          tweets={tweets}
         />
       </div>
     </div>
@@ -85,16 +83,13 @@ export const Card = ({
   rotate,
   scale,
   translate,
-  users,
+  tweets,
 }: {
   rotate: any;
   scale: any;
   translate: any;
-  users: {
+  tweets: {
     tweet: string;
-    user: string;
-    handle: string;
-    profile?: string;
   }[];
 }) => {
   return (
@@ -107,22 +102,15 @@ export const Card = ({
       }}
       className={`${InterFont.className} + max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-6 bg-[#222222] rounded-[30px] shadow-2xl`}
     >
-      <div className="bg-gray-100 h-full w-full rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-4 overflow-scroll p-4 pt-28">
-        {users.map((user, idx: number) => (
+      <div className="bg-gray-100 h-full w-full rounded-2xl grid grid-cols-1 md:grid-cols-1 gap-4 overflow-scroll p-4 pt-28">
+        {tweets.map((tweet, idx: number) => (
           <motion.div
             key={`user-${idx}`}
-            className="bg-white rounded-md cursor-pointer relative"
+            className="rounded-md cursor-pointer relative p-0 h-fit m-0 flex justify-center"
             style={{ translateY: translate }}
-            whileHover={{
-              boxShadow:
-                "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
-            }}
+            data-theme="light"
           >
-            <div className="p-4">
-              <h1 className="font-semibold text-sm text-black">{user.user}</h1>
-              <h2 className=" text-gray-500 text-xs ">{user.handle}</h2>
-              <p className="text-black text-sm">{user.tweet}</p>
-            </div>
+            <Tweet id={tweet.tweet} />
           </motion.div>
         ))}
       </div>
