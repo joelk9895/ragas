@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Nav from "../nav/Nav";
 import Clients from "../clients/Clients";
+import Circle from "./Components/SvgCircle";
 
 export default function Hero() {
   const [count, setCount] = useState(1205);
@@ -14,16 +15,16 @@ export default function Hero() {
 
   return (
     <>
-      <section className="flex min-h-screen w-screen flex-col items-center justify-start relative overflow-hidden">
+      <section className="flex min-h-screen w-screen flex-col items-center justify-center relative overflow-hidden">
         <Nav />
-        <h1 className="text-center text-6xl font-medium">
+        <h1 className="text-center text-4xl w-[80vw] md:w-full md:text-6xl font-medium">
           Open Source Evaluation
           <br />
           Framework
           <br />
           for rag applications
         </h1>
-        <h2 className="text-gr p-12 text-3xl font-thin text-gray-700">
+        <h2 className="text-gr p-12 text-xl font-thin text-gray-700">
           Processing{" "}
           <span className="font-normal dark:text-gray-400">{count}</span>{" "}
           evaluations monthly
@@ -36,16 +37,7 @@ export default function Hero() {
             Read Docs
           </button>
         </div>
-        <svg
-          width="1250"
-          height="1250"
-          viewBox="0 0 1250 1250"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute bottom-10 -z-10 w-[100vw]"
-        >
-          <circle cx="625" cy="400" r="700.5" stroke="#374151FF" />
-        </svg>
+        <Circle />
         {/* <h2 className="font-regular mb-7 mt-56 text-2xl">
           Engineers in these companies use Ragas
         </h2> */}

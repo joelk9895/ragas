@@ -1,119 +1,29 @@
-"use client";
-import React, { useRef } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
-import { Inter } from "next/font/google";
-import { Tweet } from "react-tweet";
-import { tweets } from "../../Landing";
-const InterFont = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
+import { Tweet as ReactTweet } from "react-tweet";
 
-export const Tweets = ({
-  tweets,
-  titleComponent,
-}: {
-  tweets: {
-    tweet: string;
-  }[];
-  titleComponent: string | React.ReactNode;
-}) => {
-  const containerRef = useRef<any>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-  });
-  const [isMobile, setIsMobile] = React.useState(false);
+interface Tweet {
+  tweet: string; // Assuming tweet IDs are strings
+}
 
-  React.useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => {
-      window.removeEventListener("resize", checkMobile);
-    };
-  }, []);
+interface TweetsProps {
+  tweetsList: Tweet[];
+}
 
-  const scaleDimensions = () => {
-    return isMobile ? [0.7, 0.9] : [1.05, 1];
-  };
-
-  const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
-
+export default function Tweets({ tweetsList }: TweetsProps) {
   return (
-    <div
-      className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20"
-      ref={containerRef}
-    >
-      <div
-        className="py-10 md:py-40 w-full relative"
-        style={{
-          perspective: "1000px",
-        }}
-      >
-        <Header translate={translate} titleComponent={titleComponent} />
-        <Card
-          rotate={rotate}
-          translate={translate}
-          scale={scale}
-          tweets={tweets}
-        />
-      </div>
+    <div className="flex flex-col items-center mt-10 mb-10">
+      <h3 className="text-3xl">Testimonials</h3>
+      <section className="md:w-[80vw] w-screen h-[50vh] flex gap-10 overflow-hidden max-w[100vw] marquee2 text-left">
+        <div className=" flex gap-10 track2">
+          {tweetsList.map((tweet) => (
+            <ReactTweet id={tweet.tweet} key={tweet.tweet} />
+          ))}
+        </div>
+        <div className=" flex gap-10 track2">
+          {tweetsList.map((tweet) => (
+            <ReactTweet id={tweet.tweet} key={tweet.tweet} />
+          ))}
+        </div>
+      </section>
     </div>
   );
-};
-
-export const Header = ({ translate, titleComponent }: any) => {
-  return (
-    <motion.div
-      style={{
-        translateY: translate,
-      }}
-      className="div max-w-5xl mx-auto text-center"
-    >
-      {titleComponent}
-    </motion.div>
-  );
-};
-
-export const Card = ({
-  rotate,
-  scale,
-  translate,
-  tweets,
-}: {
-  rotate: any;
-  scale: any;
-  translate: any;
-  tweets: {
-    tweet: string;
-  }[];
-}) => {
-  return (
-    <motion.div
-      style={{
-        rotateX: rotate, // rotate in X-axis
-        scale,
-        boxShadow:
-          "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
-      }}
-      className={`${InterFont.className} + max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-6 bg-[#222222] rounded-[30px] shadow-2xl`}
-    >
-      <div className="bg-gray-100 h-full w-full rounded-2xl grid grid-cols-1 md:grid-cols-1 gap-4 overflow-scroll p-4 pt-28">
-        {tweets.map((tweet, idx: number) => (
-          <motion.div
-            key={`user-${idx}`}
-            className="rounded-md cursor-pointer relative p-0 h-fit m-0 flex justify-center"
-            style={{ translateY: translate }}
-            data-theme="light"
-          >
-            <Tweet id={tweet.tweet} />
-          </motion.div>
-        ))}
-      </div>
-    </motion.div>
-  );
-};
+}

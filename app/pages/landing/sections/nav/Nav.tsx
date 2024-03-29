@@ -2,7 +2,7 @@
 import { Tenor_Sans } from "next/font/google";
 import { useTheme } from "next-themes";
 
-const tenor_sans = Tenor_Sans({
+export const tenor_sans = Tenor_Sans({
   weight: "400",
   subsets: ["latin"],
   display: "swap",
@@ -12,9 +12,9 @@ export default function Nav() {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
   return (
-    <nav className="mb-[20vh] mt-24">
+    <nav className="mb-[15vh] md:mb-[20vh] mt-16 md:mt-24">
       <h1
-        className={`${tenor_sans.className} z-[1000] flex cursor-pointer select-none items-end text-3xl`}
+        className={`${tenor_sans.className} z-[1000] flex cursor-pointer select-none items-end text-xl md:text-3xl`}
         onClick={() => {
           setTheme(currentTheme === "light" ? "dark" : "light");
         }}
@@ -23,7 +23,7 @@ export default function Nav() {
           enableBackground="new 0 0 512 512"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
-          className="mr-1 h-10 w-10"
+          className="mr-1 h-7 w-7 md:h-10 md:w-10"
         >
           <path
             d="m505.068 478.203-53.167-53.167c-.995-1.917-2.292-3.717-3.9-5.325l-288.335-288.335.003-.001-126.444-126.443c-10.535-10.536-28.55-3.074-28.55 11.826v149.764l1.207-.274-1.207 325.509c0 4.354 1.772 8.195 4.477 10.519 2.325 2.705 6.165 4.477 10.519 4.477l324.079-1.202-.273 1.202h149.764c14.901 0 22.363-18.014 11.827-28.55zm-209.982-58.557h-196.189c-3.929 0-7.115-3.185-7.115-7.115v-196.189c0-6.339 7.664-9.513 12.146-5.031l196.189 196.189c4.482 4.482 1.308 12.146-5.031 12.146z"

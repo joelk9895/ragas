@@ -1,6 +1,6 @@
 export default function Synthetic() {
   return (
-    <div className="border-2 border-slate-800 flex-col items-center justify-center relative inline-flex  w-96 h-96 overflow-hidden p-[1.2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 rounded-md">
+    <div className="border-2 border-slate-800 flex-col items-center justify-center relative inline-flex w-60 h-72 md:w-96 md:h-96 overflow-hidden p-[3px] md:p-[1.2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 rounded-md">
       <svg
         width="800px"
         height="800px"
@@ -16,9 +16,8 @@ export default function Synthetic() {
           fill="#ffcc15"
         />
       </svg>
-
-      <h3 className="text-2xl mb-5">Synthetic Data Generation</h3>
-      <p className="w-[80%] text-gray-400 text-center">
+      <h3 className="text-xl md:text-2xl mb-5">Synthetic Data Generation</h3>
+      <p className="w-[80%] text-sm text-gray-400 text-center">
         Generate Synthetic Data for your Rag applications
       </p>
     </div>

@@ -7,7 +7,6 @@
   display: flex;
   overflow: hidden;
   align-items: baseline;
-  margin-top: 15rem;
   width: 70vw;
   user-select: none;
   gap: var(--gap);
@@ -35,6 +34,30 @@
   gap: var(--gap);
   animation: scroll 30s linear infinite;
 }
+.marquee2 {
+  --gap: 1rem;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  user-select: none;
+  mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsla(0, 0%, 0%, 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
+}
+.pause-animation {
+  animation-play-state: paused;
+}
+.track2 {
+  margin-left: 1rem;
+  animation: scroll 30s linear infinite;
+  justify-content: space-around;
+}
+
 @keyframes scroll {
   from {
     transform: translateX(0);
@@ -43,6 +66,7 @@
     transform: translateX(calc(-100% - var(--gap)));
   }
 }
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -51,5 +75,6 @@
 @layer base {
   body {
     @apply bg-white text-black dark:bg-black dark:text-white;
+    text-align: center;
   }
 }
