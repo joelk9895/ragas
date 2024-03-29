@@ -1,10 +1,19 @@
 import Features from "./sections/Features/Features";
-import { World } from "./sections/Globe/Globe";
 import Hero from "./sections/Hero/Hero";
 import Tweets from "./sections/Tweets/Tweets";
 import Footer from "./sections/footer/Footer";
 import OpenSource from "./sections/openSource/OpenSource";
 import Workflow from "./sections/workflow/Workflow";
+import dynamic from "next/dynamic";
+
+const World = dynamic(
+  () =>
+    import("./sections/Globe/Globe").then((mod) => {
+      const World = mod;
+      return World;
+    }),
+  { ssr: false }
+);
 
 export default function Landing() {
   const globeConfig = {

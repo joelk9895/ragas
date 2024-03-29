@@ -76,5 +76,6 @@
   body {
     @apply bg-white text-black dark:bg-black dark:text-white;
     text-align: center;
+    position: relative;
   }
 }

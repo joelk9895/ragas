@@ -13,7 +13,7 @@ export default function Workflow() {
   const pathlength1 = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   const pathlength2 = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
   return (
-    <div className="flex flex-col items-center mt-40" ref={ref}>
+    <div className="flex flex-col items-center mt-40 relative" ref={ref}>
       <h3 className="text-xl md:text-3xl font-medium text-yellow-400">
         Where does Ragas fit in your stack?
       </h3>
@@ -64,7 +64,7 @@ export default function Workflow() {
           <path
             d="M1724 -0.000530958V2030.07L1724 3412"
             stroke="#212121"
-            stroke-width="13"
+            strokeWidth="13"
           />
         </svg>
         <svg
@@ -79,7 +79,7 @@ export default function Workflow() {
             d="M1724 -0.000530958V2030.07L1724 3412"
             stroke="url(#paint2_linear_195_13)"
             pathLength={pathlength1}
-            stroke-width="13"
+            strokeWidth="13"
           />
           <defs>
             <linearGradient
@@ -91,7 +91,7 @@ export default function Workflow() {
               gradientUnits="userSpaceOnUse"
             >
               <stop />
-              <stop offset="0.835" stop-color="#FFCC33" />
+              <stop offset="0.835" stopColor="#FFCC33" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_195_13"
@@ -102,7 +102,7 @@ export default function Workflow() {
               gradientUnits="userSpaceOnUse"
             >
               <stop />
-              <stop offset="0.835" stop-color="#FFCC33" />
+              <stop offset="0.835" stopColor="#FFCC33" />
             </linearGradient>
             <linearGradient
               id="paint2_linear_195_13"
@@ -113,7 +113,7 @@ export default function Workflow() {
               gradientUnits="userSpaceOnUse"
             >
               <stop />
-              <stop offset="0.835" stop-color="#FFCC33" />
+              <stop offset="0.835" stopColor="#FFCC33" />
             </linearGradient>
           </defs>
         </svg>
@@ -162,7 +162,7 @@ export default function Workflow() {
               y2="3412"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FFCC33" />
+              <stop stopColor="#FFCC33" />
               <stop offset="0.97" />
             </linearGradient>
           </defs>
