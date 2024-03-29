@@ -13,7 +13,7 @@ export default function Workflow() {
   const pathlength1 = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   const pathlength2 = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
   return (
-    <div className="flex flex-col items-center mt-40 relative" ref={ref}>
+    <div className="flex flex-col items-center mt-40" ref={ref}>
       <h3 className="text-xl md:text-3xl font-medium text-yellow-400">
         Where does Ragas fit in your stack?
       </h3>
@@ -59,7 +59,7 @@ export default function Workflow() {
           viewBox="0 0 3516 3412"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-96 w-[30rem] "
+          className="h-96 w-screen "
         >
           <path
             d="M1724 -0.000530958V2030.07L1724 3412"
@@ -73,7 +73,7 @@ export default function Workflow() {
           viewBox="0 0 3516 3412"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-96 w-[30rem] absolute"
+          className="h-96 w-screen absolute"
         >
           <motion.path
             d="M1724 -0.000530958V2030.07L1724 3412"
