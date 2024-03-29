@@ -405,8 +405,8 @@ export default function Landing() {
       <Hero />
       <Features />
       <Workflow />
-      <div className=" w-screen h-screen z-10 flex flex-col items-center mt-24">
-        <h3 className="text-3xl font-medium">
+      <div className=" w-screen h-screen z-10 flex flex-col items-center mt-24 overflow-hidden">
+        <h3 className="text-xl md:text-3xl font-medium">
           Customers across the world are using ragas
         </h3>
         <World data={sampleArcs} globeConfig={globeConfig} />
