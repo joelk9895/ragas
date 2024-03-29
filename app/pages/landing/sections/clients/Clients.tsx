@@ -6,7 +6,6 @@ export default function Clients() {
           <p>Microsoft</p>
           <p>AWS</p>
           <p>DataBricks</p>
-          <p>Ali Baba</p>
           <p>Adobe</p>
           <p>Baidu</p>
           <p>IBM</p>
@@ -17,7 +16,6 @@ export default function Clients() {
           <p>Microsoft</p>
           <p>AWS</p>
           <p>DataBricks</p>
-          <p>Ali Baba</p>
           <p>Adobe</p>
           <p>Baidu</p>
           <p>IBM</p>

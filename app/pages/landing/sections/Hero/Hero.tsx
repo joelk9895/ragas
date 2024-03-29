@@ -24,15 +24,15 @@ export default function Hero() {
           <br />
           for rag applications
         </h1>
-        <h2 className="text-gr p-12 text-xl font-thin text-gray-700">
+        <h2 className="text-gr p-12 text-xl font-thin text-gray-600">
           Processing{" "}
-          <span className="font-normal dark:text-gray-400">{count}</span>{" "}
+          <span className="font-normal dark:text-gray-400">5Million</span>{" "}
           evaluations monthly
         </h2>
         <div className="flex space-x-4">
-          <button className="cursor-pointer rounded-md bg-yellow-400 px-4 py-2 text-black">
+          {/* <button className="cursor-pointer rounded-md bg-yellow-400 px-4 py-2 text-black">
             Get Demo
-          </button>
+          </button> */}
           <button className=" rounded-md border-[0.5px] border-gray-500 bg-transparent px-4 py-2 dark:text-yellow-400">
             Read Docs
           </button>
