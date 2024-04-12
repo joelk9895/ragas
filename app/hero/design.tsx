@@ -30,7 +30,7 @@ export default function Design(): JSX.Element {
     const wordCount = words.length;
 
     // Predefined opacity values
-    const predefinedOpacities = [0.99, 0.98, 0.07, 0.1, 0.095];
+    const predefinedOpacities = [0.99, 0.38, 0.07, 0.1, 0.095];
 
     const animatePathLength = () => {
       setPathLength((prevPathLength) => prevPathLength + 1);
@@ -75,21 +75,49 @@ export default function Design(): JSX.Element {
         })`;
         ctx.stroke();
 
-        ctx.font = "20px Arial";
+        ctx.font = "20px Satoshi-Regular";
         ctx.fillStyle = i === currentWordIndex ? "black" : "rgb(200, 200, 200)";
         ctx.fillText(
           currentWord,
           ((i + 0.5) * canvas.width) / 2 / wordCount - textWidth / 2,
           50
         );
+      }
+      // Inside the second for loop where you draw words at the bottom
+      for (let i = 0; i < wordCount; i++) {
+        const currentWords = words[i];
+        const textWidth = ctx.measureText(currentWords).width;
+        const rectX =
+          ((i + 0.5) * canvas.width) / 2 / wordCount - textWidth / 2 - 5;
+        const rectY = window.innerHeight - 70;
+        const rectWidth = textWidth + 10;
+        const rectHeight = 30;
 
-        ctx.fillStyle = "rgb(200, 200, 200)";
+        // Generate a random opacity for the background
+        const randomOpacity =
+          predefinedOpacities[
+            Math.floor(Math.random() * predefinedOpacities.length)
+          ];
+        // Apply the random opacity to the yellow background
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(255, 204, 0, ${randomOpacity})`;
+        ctx.roundRect(rectX, rectY, rectWidth, rectHeight, 5);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.font = "20px Satoshi-Regular";
+        if (randomOpacity > 0.5) {
+          ctx.fillStyle = "black";
+        } else {
+          ctx.fillStyle = "rgb(256, 256, 256)";
+        }
         ctx.fillText(
-          currentWord,
+          currentWords,
           ((i + 0.5) * canvas.width) / 2 / wordCount - textWidth / 2,
           window.innerHeight - 50
         );
       }
+
       setTimeout(() => {
         setCurrentWordIndex((prevIndex) =>
           prevIndex + 1 < wordCount ? prevIndex + 1 : 0
