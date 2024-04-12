@@ -30,7 +30,7 @@ export default function Design(): JSX.Element {
     const wordCount = words.length;
 
     // Predefined opacity values
-    const predefinedOpacities = [0.99, 0.38, 0.07, 0.1, 0.095];
+    const predefinedOpacities = [0.8, 0.38, 0.07, 0.1, 0.095];
 
     const animatePathLength = () => {
       setPathLength((prevPathLength) => prevPathLength + 1);
@@ -50,11 +50,13 @@ export default function Design(): JSX.Element {
         const rectHeight = 30;
 
         if (i === currentWordIndex) {
+          ctx.beginPath();
           ctx.fillStyle = "rgba(255, 204, 0, 1)";
           i === 0
             ? ctx.roundRect(rectX - 5, rectY, 2 * rectWidth, rectHeight, 5)
             : ctx.roundRect(rectX, rectY, rectWidth, rectHeight, 5);
           ctx.fill();
+          ctx.closePath();
         }
 
         ctx.moveTo(pathLengthOffset, 50);
@@ -69,10 +71,10 @@ export default function Design(): JSX.Element {
             Math.floor(Math.random() * predefinedOpacities.length)
           ];
         console.log(randomOpacity);
-        ctx.strokeStyle = `rgba(255, 204, 0, ${
+        const opacity =
           Math.min(Math.random(), Math.random(), randomOpacity) *
-          Math.min(Math.random(), Math.random())
-        })`;
+          Math.min(Math.random(), Math.random());
+        ctx.strokeStyle = `rgba(255, 204, 0, ${opacity})`;
         ctx.stroke();
 
         ctx.font = "20px Satoshi-Regular";
@@ -82,32 +84,26 @@ export default function Design(): JSX.Element {
           ((i + 0.5) * canvas.width) / 2 / wordCount - textWidth / 2,
           50
         );
-      }
-      // Inside the second for loop where you draw words at the bottom
-      for (let i = 0; i < wordCount; i++) {
-        const currentWords = words[i];
-        const textWidth = ctx.measureText(currentWords).width;
-        const rectX =
-          ((i + 0.5) * canvas.width) / 2 / wordCount - textWidth / 2 - 5;
-        const rectY = window.innerHeight - 70;
-        const rectWidth = textWidth + 10;
-        const rectHeight = 30;
 
-        // Generate a random opacity for the background
-        const randomOpacity =
-          predefinedOpacities[
-            Math.floor(Math.random() * predefinedOpacities.length)
-          ];
+        const currentWords = words[i];
+        const textWidth2 = ctx.measureText(currentWords).width;
+        const rectX2 =
+          ((i + 0.5) * canvas.width) / 2 / wordCount - textWidth / 2 - 5;
+        const rectY2 = window.innerHeight - 70;
+        const rectWidth2 = textWidth + 10;
+        const rectHeight2 = 30;
         // Apply the random opacity to the yellow background
         ctx.beginPath();
-        ctx.fillStyle = `rgba(255, 204, 0, ${randomOpacity})`;
-        ctx.roundRect(rectX, rectY, rectWidth, rectHeight, 5);
+        ctx.fillStyle = `rgba(255, 204, 0, ${opacity})`;
+        i == 0
+          ? ctx.roundRect(rectX2 - 5, rectY2, 2 * rectWidth2, rectHeight2, 5)
+          : ctx.roundRect(rectX2, rectY2, rectWidth2, rectHeight2, 5);
         ctx.fill();
         ctx.closePath();
 
         ctx.font = "20px Satoshi-Regular";
-        if (randomOpacity > 0.5) {
-          ctx.fillStyle = "black";
+        if (opacity > 0.4) {
+          ctx.fillStyle = "rgb(10,10,10)";
         } else {
           ctx.fillStyle = "rgb(256, 256, 256)";
         }
