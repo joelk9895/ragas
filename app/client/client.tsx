@@ -1,4 +1,4 @@
-import { tenorsans } from "../page";
+import { tenorsans } from "../stack/stack";
 
 export default function Client() {
   return (

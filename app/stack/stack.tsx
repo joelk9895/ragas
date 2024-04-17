@@ -1,5 +1,12 @@
 import Image from "next/image";
-import { tenorsans } from "../page";
+import { Tenor_Sans } from "next/font/google";
+
+export const tenorsans = Tenor_Sans({
+  display: "swap",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 
 
 export default function StackImage() {
