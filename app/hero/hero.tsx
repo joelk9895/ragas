@@ -1,4 +1,4 @@
-import { tenorsans } from "../layout";
+import { tenorsans } from "../page";
 import { Badge } from "./badge";
 
 export default function Hero() {

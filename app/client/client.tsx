@@ -1,4 +1,4 @@
-import { tenorsans } from "../layout";
+import { tenorsans } from "../page";
 
 export default function Client() {
   return (

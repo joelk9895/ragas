@@ -6,6 +6,13 @@ import Hero from "./hero/hero";
 import StackImage from "./stack/stack";
 import Tweets from "./tweets/tweet";
 import { tweets } from "./tweets/tweets";
+import { Tenor_Sans } from "next/font/google";
+
+export const tenorsans = Tenor_Sans({
+  display: "swap",
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Home() {
   return (

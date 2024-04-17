@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { tenorsans } from "../layout";
+import { tenorsans } from "../page";
+
 
 export default function StackImage() {
   return (
