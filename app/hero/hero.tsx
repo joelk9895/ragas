@@ -1,16 +1,10 @@
+import { tenorsans } from "../layout";
 import { Badge } from "./badge";
-import { Tenor_Sans } from "next/font/google";
-
-const tenorsans = Tenor_Sans({
-  display: "swap",
-  subsets: ["latin"],
-  weight: "400",
-});
 
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center absolute top-[50%] translate-y-[-50%] z-50">
-      <Badge text="Github" />
+    <div className="flex flex-col w-screen h-screen justify-center items-center absolute z-50">
+      <Badge text="github" />
       <h1
         className={`${tenorsans.className} text-[8rem] font-medium text-white leading-none mb-10`}
       >

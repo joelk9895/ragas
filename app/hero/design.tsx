@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 
 export default function Design(): JSX.Element {
-  const [pathLength, setPathLength] = useState(0);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   useEffect(() => {
@@ -19,8 +18,8 @@ export default function Design(): JSX.Element {
     const words = sentence.split(" ");
 
     const scale = window.devicePixelRatio || 1;
-    const canvasWidth = window.innerWidth - 20;
-    const canvasHeight = window.innerHeight - 20;
+    const canvasWidth = window.innerWidth;
+    const canvasHeight = window.innerHeight;
     canvas.width = canvasWidth * scale;
     canvas.height = canvasHeight * scale;
     canvas.style.width = canvasWidth + "px";
@@ -30,10 +29,9 @@ export default function Design(): JSX.Element {
     const wordCount = words.length;
 
     // Predefined opacity values
-    const predefinedOpacities = [0.8, 0.38, 0.07, 0.1, 0.095];
+    const predefinedOpacities = [0.8, 0.58, 0.07, 0.34, 0.95];
 
     const animatePathLength = () => {
-      setPathLength((prevPathLength) => prevPathLength + 1);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const pathLengthOffset =
         ((currentWordIndex + 0.5) * canvas.width) / 2 / wordCount;
@@ -70,7 +68,6 @@ export default function Design(): JSX.Element {
           predefinedOpacities[
             Math.floor(Math.random() * predefinedOpacities.length)
           ];
-        console.log(randomOpacity);
         const opacity =
           Math.min(Math.random(), Math.random(), randomOpacity) *
           Math.min(Math.random(), Math.random());
@@ -86,7 +83,6 @@ export default function Design(): JSX.Element {
         );
 
         const currentWords = words[i];
-        const textWidth2 = ctx.measureText(currentWords).width;
         const rectX2 =
           ((i + 0.5) * canvas.width) / 2 / wordCount - textWidth / 2 - 5;
         const rectY2 = window.innerHeight - 70;
@@ -95,6 +91,7 @@ export default function Design(): JSX.Element {
         // Apply the random opacity to the yellow background
         ctx.beginPath();
         ctx.fillStyle = `rgba(255, 204, 0, ${opacity})`;
+        ctx.strokeStyle = `rgba(255, 204, 0, ${opacity})`;
         i == 0
           ? ctx.roundRect(rectX2 - 5, rectY2, 2 * rectWidth2, rectHeight2, 5)
           : ctx.roundRect(rectX2, rectY2, rectWidth2, rectHeight2, 5);
@@ -102,7 +99,7 @@ export default function Design(): JSX.Element {
         ctx.closePath();
 
         ctx.font = "20px Satoshi-Regular";
-        if (opacity > 0.4) {
+        if (opacity > 0.7) {
           ctx.fillStyle = "rgb(10,10,10)";
         } else {
           ctx.fillStyle = "rgb(256, 256, 256)";
@@ -118,7 +115,6 @@ export default function Design(): JSX.Element {
         setCurrentWordIndex((prevIndex) =>
           prevIndex + 1 < wordCount ? prevIndex + 1 : 0
         );
-        setPathLength(0);
       }, 2000);
     };
 
@@ -126,5 +122,5 @@ export default function Design(): JSX.Element {
     animatePathLength();
   }, [currentWordIndex]);
 
-  return <canvas></canvas>;
+  return <canvas className="w-screen h-screen"></canvas>;
 }

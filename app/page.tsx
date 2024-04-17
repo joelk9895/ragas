@@ -1,6 +1,7 @@
 import { EvervaultCardDemo } from "./features/features";
 import Design from "./hero/design";
 import Hero from "./hero/hero";
+import StackImage from "./stack/stack";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Design />
       <Hero />
       <EvervaultCardDemo />
+      <StackImage />
     </main>
   );
 }

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const Badge = ({ text }: { text: string }) => {
   return (
     <a
-      href="https://www.producthunt.com/posts/awesome-framer-motion-components"
+      href="https://github.com/"
       target="__blank"
       className="bg-slate-900 no-underline group cursor-pointer relative  shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block -bottom-5"
     >
