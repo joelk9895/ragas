@@ -1,10 +1,11 @@
 import Image from "next/image";
+import { tenorsans } from "../layout";
 
 export default function StackImage() {
   return (
     <>
       <h2 className="text-white text-3xl font-bold mt-24">
-        Ragas in your Stack
+        <span className={`${tenorsans.className}`}>ragas</span> in your stack
       </h2>
       <Image
         src={"/ragasStack.png"}

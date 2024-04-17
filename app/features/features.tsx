@@ -4,7 +4,7 @@ import { EvervaultCard, Icon } from "./component/featureCard";
 export function EvervaultCardDemo() {
   return (
     <section className="w-screen h-fit p-10 bg-black flex flex-col items-center gap-10 mt-10">
-      <h2 className="text-white text-3xl font-bold">Features</h2>
+      <h2 className="text-white text-3xl font-bold">features</h2>
       <div className="flex gap-10">
         <div className="border border-white/[0.2] flex flex-col items-start max-w-sm mx-auto p-4 relative h-[30rem]">
           <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
