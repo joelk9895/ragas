@@ -40,6 +40,10 @@ export default function About() {
           </p>
         </div>
       </div>
+      <p className="text-white text-lg font-bold mt-4 text-left">
+        For product support or questions please join our <a>Discord</a> and ask
+        questions in our #support chatrooms.
+      </p>
     </section>
   );
 }
