@@ -105,7 +105,10 @@ export default function Client() {
             ></path>
           </svg>
         </div>
-        <div className="flex bg-white w-screen justify-around items-center track">
+        <div
+          className="flex bg-white w-screen justify-around items-center track"
+          aria-hidden={true}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="3em"

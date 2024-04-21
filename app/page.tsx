@@ -1,4 +1,5 @@
 import About from "./about/about";
+import Careers from "./career/career";
 import Client from "./client/client";
 import { EvervaultCardDemo } from "./features/features";
 import Design from "./hero/design";
@@ -17,6 +18,7 @@ export default function Home() {
       <About />
       <Client />
       <Tweets tweetsList={tweets} />
+      <Careers />
     </main>
   );
 }

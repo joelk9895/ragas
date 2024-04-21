@@ -1,9 +1,9 @@
 import { Icon } from "../features/component/featureCard";
 
-export default function About() {
+export default function Careers() {
   return (
     <section className="md:w-[50vw] w-[90vw] text-center">
-      <h2 className="text-white font-bold text-3xl lowercase">About Us</h2>
+      <h2 className="text-white font-bold text-3xl text-left">Career</h2>
       <p className="text-white text-md font-light mt-4 text-left">
         Midjourney is an independent research lab exploring new mediums of
         thought and expanding the imaginative powers of the human species.
