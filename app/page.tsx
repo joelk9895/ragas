@@ -5,6 +5,7 @@ import { EvervaultCardDemo } from "./features/features";
 import Footer from "./footer/footer";
 import Design from "./hero/design";
 import Hero from "./hero/hero";
+import Investors from "./investors/investors";
 import StackImage from "./stack/stack";
 import Tweets from "./tweets/tweet";
 import { tweets } from "./tweets/tweets";
@@ -20,6 +21,7 @@ export default function Home() {
       <Client />
       <Tweets tweetsList={tweets} />
       <Careers />
+      <Investors />
       <Footer />
     </main>
   );

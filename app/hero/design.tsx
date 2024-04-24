@@ -29,7 +29,7 @@ export default function Design(): JSX.Element {
     const wordCount = words.length;
 
     // Predefined opacity values
-    const predefinedOpacities = [0.8, 0.58, 0.07, 0.34, 0.95];
+    const predefinedOpacities = [0.8, 0.58, 0.7, 0.34, 0.95];
 
     const animatePathLength = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -89,8 +89,8 @@ export default function Design(): JSX.Element {
             Math.floor(Math.random() * predefinedOpacities.length)
           ];
         const opacity =
-          Math.min(Math.random(), Math.random(), randomOpacity) *
-          Math.min(Math.random(), Math.random());
+          Math.min(Math.random(), randomOpacity) *
+          Math.min(randomOpacity, Math.random());
         ctx.strokeStyle = `rgba(255, 204, 0, ${opacity})`;
         ctx.stroke();
 
@@ -175,7 +175,7 @@ export default function Design(): JSX.Element {
         setCurrentWordIndex((prevIndex) =>
           prevIndex + 1 < wordCount ? prevIndex + 1 : 0
         );
-      }, 2000);
+      }, 1400);
     };
 
     // Start the animation
