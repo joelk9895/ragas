@@ -18,13 +18,13 @@ export default function Design(): JSX.Element {
     const words = sentence.split(" ");
 
     const scale = window.devicePixelRatio || 1;
-    const canvasWidth = window.innerWidth;
-    const canvasHeight = window.innerHeight;
-    canvas.width = canvasWidth * scale;
-    canvas.height = canvasHeight * scale;
-    canvas.style.width = canvasWidth + "px";
-    canvas.style.height = canvasHeight + "px";
-    ctx.scale(scale, scale);
+    const canvasWidth = window.outerWidth;
+    const canvasHeight = window.outerHeight;
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+    // canvas.style.width = canvasWidth + "px";
+    // canvas.style.height = canvasHeight + "px";
+    // ctx.scale(scale, scale);
 
     const wordCount = words.length;
 
@@ -34,15 +34,14 @@ export default function Design(): JSX.Element {
     const animatePathLength = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const pathLengthOffset =
-        ((currentWordIndex + 0.5) * canvas.width) / 2 / wordCount;
+        ((currentWordIndex + 0.5) * canvas.width) / wordCount;
 
       ctx.beginPath();
       for (let i = 0; i < wordCount; i++) {
         const currentWord = words[i];
         const textWidth = ctx.measureText(currentWord).width;
 
-        var rectX =
-          ((i + 0.5) * canvas.width) / 2 / wordCount - textWidth / 2 - 5;
+        var rectX = ((i + 0.5) * canvas.width) / wordCount - textWidth / 2 - 5;
         const rectY = 28;
         const rectWidth = textWidth + 10;
         const rectHeight = 30;
@@ -79,8 +78,8 @@ export default function Design(): JSX.Element {
         } else {
           ctx.moveTo(pathLengthOffset, 50);
           ctx.lineTo(
-            ((i + 0.5) * canvas.width) / 2 / wordCount,
-            window.innerHeight - 60
+            ((i + 0.5) * canvas.width) / wordCount,
+            window.innerHeight - 10
           );
         }
         // Randomly select opacity from predefined values
@@ -107,7 +106,7 @@ export default function Design(): JSX.Element {
             )
           : ctx.fillText(
               currentWord,
-              ((i + 0.5) * canvas.width) / 2 / wordCount - textWidth / 2,
+              ((i + 0.5) * canvas.width) / wordCount - textWidth / 2,
               50
             );
 
@@ -116,8 +115,8 @@ export default function Design(): JSX.Element {
         rectX2 =
           window.innerWidth < 720
             ? ((i * canvas.height) / 2 / wordCount) * 0.6 + 32
-            : ((i + 0.5) * canvas.width) / 2 / wordCount - textWidth / 2 - 5;
-        const rectY2 = window.innerHeight - 70;
+            : ((i + 0.5) * canvas.width) / wordCount - textWidth / 2 - 5;
+        const rectY2 = window.innerHeight - 20;
         const rectWidth2 = textWidth + 10;
         const rectHeight2 = 30;
 
@@ -166,8 +165,8 @@ export default function Design(): JSX.Element {
             )
           : ctx.fillText(
               currentWords,
-              ((i + 0.5) * canvas.width) / 2 / wordCount - textWidth / 2,
-              window.innerHeight - 50
+              ((i + 0.5) * canvas.width) / wordCount - textWidth / 2,
+              window.innerHeight
             );
       }
 

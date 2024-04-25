@@ -6,7 +6,7 @@ import Image from "next/image";
 export const Badge = () => {
   return (
     <a
-      href="https://github.com/"
+      href="http://github.com/explodinggradients/ragas"
       target="__blank"
       className="bg-slate-900 no-underline group cursor-pointer relative  shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block md:-bottom-5"
     >
@@ -18,7 +18,7 @@ export const Badge = () => {
           src="/GitHub_Logo_White.png"
           width={40}
           height={16}
-          className="w-8 h-3"
+          className="w-10 h-4"
           alt="github"
         />
         <svg

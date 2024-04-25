@@ -9,10 +9,8 @@ export default function About() {
         research and pragmatic engineering practices to empower the visionaries
         who are redefining the possibilities of LLMs, with the right tools.
       </p>
-      <h3 className="text-white font-medium text-2xl mt-10 md:text-left mb-5">
-        Founders
-      </h3>
-      <div className="flex flex-col items-center md:flex-row gap-5 text-white mb-10">
+      <h3 className="text-white font-medium text-2xl mt-10 mb-5">Founders</h3>
+      <div className="flex flex-col items-center md:flex-row justify-center gap-5 text-white mb-10">
         <div className="flex flex-col border w-fit h-fit border-white/[0.2] p-10 relative">
           <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
           <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />
@@ -38,10 +36,10 @@ export default function About() {
           </p>
         </div>
       </div>
-      <p className="text-white text-lg font-bold mt-4 text-left">
+      {/* <p className="text-white text-lg font-bold mt-4 text-left">
         For product support or questions please join our <a>Discord</a> and ask
         questions in our #support chatrooms.
-      </p>
+      </p> */}
     </section>
   );
 }
