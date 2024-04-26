@@ -11,7 +11,7 @@ export default function About() {
       </p>
       <h3 className="text-white font-medium text-2xl mt-10 mb-5">Founders</h3>
       <div className="flex flex-col items-center md:flex-row justify-center gap-5 text-white mb-10">
-        <div className="flex flex-col border w-fit h-fit border-white/[0.2] p-10 relative">
+        <div className="flex flex-col border min-w-[220px] w-fit h-fit border-white/[0.2] p-10 relative">
           <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
           <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />
           <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white" />
@@ -23,7 +23,7 @@ export default function About() {
             Kaggle GM
           </p>
         </div>
-        <div className="flex flex-col border w-fit h-fit border-white/[0.2] p-10 relative">
+        <div className="flex flex-col border min-w-[220px] w-fit h-fit border-white/[0.2] p-10 relative">
           <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
           <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />
           <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white" />
@@ -38,7 +38,10 @@ export default function About() {
       </div>
       <p className="text-white text-lg font-medium mt-4 text-left">
         For support or questions regarding ragas please{" "}
-        <a className="font-thin italic underline text-yellow-200">
+        <a
+          className="font-thin italic underline text-yellow-200"
+          href="https://discord.gg/WhPbAP7d"
+        >
           join discord
         </a>{" "}
         as questions in <span className="italic font-black">#questions</span>{" "}

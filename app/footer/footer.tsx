@@ -2,7 +2,7 @@ import { tenorsans } from "../stack/stack";
 
 export default function Footer() {
   return (
-    <footer className="w-screen h-[10vh] bg-black text-white flex justify-between px-10 items-center mt-28 border-t-[0.5px]">
+    <footer className="w-screen bg-black text-white flex md:flex-row flex-col-reverse justify-between px-10 py-7 gap-5 items-center mt-28 border-t-[0.5px] border-slate-500">
       <div className="flex flex-col items-center">
         <a href="mailto:founders@explodinggradients.com">
           founders@explodinggradients.com

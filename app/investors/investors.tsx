@@ -6,9 +6,9 @@ export default function Investors(): JSX.Element {
       <h2 className="text-white font-bold text-3xl ">
         <span className={`${tenorsans.className}`}>ragas</span> is backed by
       </h2>
-      <div className="flex w-[50vh] items-center gap-10 justify-center mt-10">
+      <div className="flex md:flex-row flex-col w-[50vh] items-center gap-5 md:gap-10 justify-center mt-10">
         <svg
-          className="hidden sm:block"
+          className="w-40"
           width="700"
           height="100"
           viewBox="0 0 175 33"
@@ -33,6 +33,7 @@ export default function Investors(): JSX.Element {
           ></path>
         </svg>
         <svg
+          className="w-40"
           xmlns="http://www.w3.org/2000/svg"
           width="1000"
           height="60"
@@ -49,6 +50,7 @@ export default function Investors(): JSX.Element {
           />
         </svg>
         <svg
+          className="w-40"
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           width="500"
@@ -122,11 +124,11 @@ export default function Investors(): JSX.Element {
           />
         </svg>
         <svg
+          className="w-40"
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           width="500"
           height="100"
-          className="w-fit h-fit"
           viewBox="0 0 750 228"
         >
           <path
