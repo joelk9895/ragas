@@ -47,7 +47,7 @@ export default function Design(): JSX.Element {
         const rectHeight = 30;
 
         if (window.innerWidth < 720) {
-          rectX = ((i * canvas.height) / 2 / wordCount) * 0.6 + 32;
+          rectX = ((i * canvas.height) / wordCount) * 0.9 + 32;
           if (i === currentWordIndex) {
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 204, 0, 1)";
@@ -70,10 +70,13 @@ export default function Design(): JSX.Element {
         }
 
         if (window.innerWidth < 720) {
-          ctx.moveTo(20, pathLengthOffset + 10);
+          ctx.moveTo(
+            20,
+            ((currentWordIndex + 0.5) * canvas.height * 0.9) / wordCount
+          );
           ctx.lineTo(
             window.innerWidth - textWidth,
-            ((i * canvas.height) / 2 / wordCount) * 0.6 + 50
+            ((i * canvas.height) / wordCount) * 0.9 + 50
           );
         } else {
           ctx.moveTo(pathLengthOffset, 50);
@@ -102,7 +105,7 @@ export default function Design(): JSX.Element {
               currentWord,
 
               10,
-              ((i * canvas.height) / 2 / wordCount) * 0.6 + 50
+              ((i * canvas.height) / wordCount) * 0.9 + 50
             )
           : ctx.fillText(
               currentWord,
@@ -114,7 +117,7 @@ export default function Design(): JSX.Element {
         var rectX2 = 0;
         rectX2 =
           window.innerWidth < 720
-            ? ((i * canvas.height) / 2 / wordCount) * 0.6 + 32
+            ? ((i * canvas.height) / wordCount) * 0.9 + 32
             : ((i + 0.5) * canvas.width) / wordCount - textWidth / 2 - 5;
         const rectY2 = window.innerHeight - 20;
         const rectWidth2 = textWidth + 10;
@@ -161,7 +164,7 @@ export default function Design(): JSX.Element {
               currentWord,
 
               window.innerWidth - textWidth - 10,
-              ((i * canvas.height) / 2 / wordCount) * 0.6 + 50
+              (rectX = ((i * canvas.height) / wordCount) * 0.9 + 50)
             )
           : ctx.fillText(
               currentWords,

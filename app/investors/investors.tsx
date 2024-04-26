@@ -16,14 +16,14 @@ export default function Investors(): JSX.Element {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M0.389343 16.0201L9.32558 31.6456H27.1722L36.1085 16.0201L27.1722 0.394577H9.32558L0.389343 16.0201ZM29.4192 16.0201L23.8405 25.7828H12.6831L7.10444 16.0201L12.6831 6.25737H23.8405L29.4192 16.0201Z"
             fill="white"
           ></path>
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M26.6298 15.0386L22.7041 8.22025H16.0148L19.9147 15.0645H26.6298V15.0386ZM19.9147 17.0015L16.0148 23.8457H22.7041L26.604 17.0015H19.9147Z"
             fill="#FF7500"
           ></path>
