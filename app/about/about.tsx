@@ -36,7 +36,7 @@ export default function About() {
           </p>
         </div>
       </div>
-      <p className="text-white text-lg font-medium mt-4 text-left">
+      <p className="text-white text-md font-medium mt-4 text-center">
         For support or questions regarding ragas please{" "}
         <a
           className="font-thin italic underline text-yellow-200"
@@ -47,9 +47,15 @@ export default function About() {
         as questions in <span className="italic font-black">#questions</span>{" "}
         chatroom.
       </p>
-      <p className="text-white text-lg font-medium mt-10 text-left">
-        For enterprise features and collaborations <a href="">email</a> or talk
-        to founder <a href="">or schedule a meeting with the founder</a>
+      <p className="text-white text-lg font-medium mt-1 mb-10 text-center">
+        For enterprise features and collaborations{" "}
+        <a href="" className="font-thin  text-yellow-200">
+          email us
+        </a>{" "}
+        or{" "}
+        <a href="" className="font-thin  text-yellow-200">
+          talk to founder.
+        </a>
       </p>
     </section>
   );
