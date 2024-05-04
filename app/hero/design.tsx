@@ -17,7 +17,7 @@ export default function Design(): JSX.Element {
       "building the opensource standard for evaluating LLM applications";
     const words = sentence.split(" ");
 
-    window.devicePixelRatio = 2;
+    window.devicePixelRatio = 3;
     const canvasWidth = window.outerWidth;
     const canvasHeight = window.outerHeight;
 
@@ -120,7 +120,7 @@ export default function Design(): JSX.Element {
         var rectX2 = 0;
         rectX2 =
           window.innerWidth < 720
-            ? ((i * canvas.height) / (2 * wordCount)) * 0.6 + 32
+            ? (i * canvas.height) / wordCount + 32
             : ((i + 0.5) * canvas.width) / wordCount - textWidth / 2 - 5;
         const rectY2 = window.innerHeight - 20;
         const rectWidth2 = textWidth + 10;
