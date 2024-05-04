@@ -17,17 +17,13 @@ export default function Design(): JSX.Element {
       "building the opensource standard for evaluating LLM applications";
     const words = sentence.split(" ");
 
-    const scale = window.devicePixelRatio || 1;
-    console.log(scale);
+    window.devicePixelRatio = 2;
     const canvasWidth = window.outerWidth;
     const canvasHeight = window.outerHeight;
 
     if (window.innerWidth < 720) {
-      canvas.width = canvasWidth * scale;
-      canvas.height = canvasHeight * scale;
-      canvas.style.width = canvasWidth + "px";
-      canvas.style.height = canvasHeight + "px";
-      ctx.scale(scale, scale);
+      canvas.width = canvasWidth;
+      canvas.height = canvasHeight;
     } else {
       canvas.width = canvasWidth;
       canvas.height = canvasHeight;
@@ -54,7 +50,7 @@ export default function Design(): JSX.Element {
         const rectHeight = 30;
 
         if (window.innerWidth < 720) {
-          rectX = ((i * canvas.height) / (2 * wordCount)) * 0.6 + 32;
+          rectX = (i * canvas.height) / wordCount + 32;
           if (i === currentWordIndex) {
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 204, 0, 1)";
@@ -79,11 +75,11 @@ export default function Design(): JSX.Element {
         if (window.innerWidth < 720) {
           ctx.moveTo(
             20,
-            ((currentWordIndex + 0.5) * canvas.height * 0.6) / 2 / wordCount
+            ((currentWordIndex + 0.5) * canvas.height) / wordCount
           );
           ctx.lineTo(
             window.innerWidth - textWidth,
-            ((i * canvas.height) / wordCount / 2) * 0.6 + 50
+            (i * canvas.height) / wordCount + 50
           );
         } else {
           ctx.moveTo(pathLengthOffset, 50);
@@ -112,7 +108,7 @@ export default function Design(): JSX.Element {
               currentWord,
 
               10,
-              ((i * canvas.height) / wordCount / 2) * 0.6 + 50
+              (i * canvas.height) / wordCount + 50
             )
           : ctx.fillText(
               currentWord,
@@ -163,7 +159,7 @@ export default function Design(): JSX.Element {
               currentWord,
 
               window.innerWidth - textWidth - 10,
-              (rectX = ((i * canvas.height) / wordCount / 2) * 0.6 + 50)
+              (rectX = (i * canvas.height) / wordCount + 50)
             )
           : ctx.fillText(
               currentWords,
