@@ -1,7 +1,9 @@
 "use client";
 import { useState } from "react";
 import { tenorsans } from "../stack/stack";
-import { Badge } from "./badge";
+import { Github } from "./github";
+import { Discord } from "./discord";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
   const handleRedirect = (url: string) => {
@@ -48,7 +50,7 @@ export default function Hero() {
       timeoutId = setTimeout(() => func.apply(this, args), delay);
     };
   };
-
+  const router = useRouter();
   const handleEmailChange = debounce((email: string) => {
     if (isValidCompanyEmail(email)) {
       setEmailError("Please enter a valid company email address.");
@@ -76,35 +78,10 @@ export default function Hero() {
 
   return (
     <div className="flex flex-col w-screen h-screen justify-center items-center absolute z-50">
-      {cardVisible ? (
-        <div className="z-[1000] flex flex-col items-center justify-center border-[0.5px] border-slate-500 backdrop-blur-xl bg-opacity-90 p-5 rounded-lg text-white absolute top-[50vh] left-[50vw] translate-x-[-50%] translate-y-[-50%] ">
-          <p className="text-center mt-2">
-            Please provide your company email address to schedule a meeting with
-            us.
-          </p>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            className="p-1 rounded-sm border-yellow-500 border-[0.5px] mt-5 w-[90%] text-black"
-            onChange={(e) => {
-              setEmailValue(e.target.value);
-              handleEmailChange(e.target.value);
-            }}
-            value={emailValue}
-          />
-          {emailError && (
-            <p className="text-red-500 text-sm mt-1">{emailError}</p>
-          )}
-          <button
-            className="bg-yellow-400 text-black p-2 rounded-md mt-5"
-            onClick={handleClose}
-          >
-            Close
-          </button>
-        </div>
-      ) : null}
-      <Badge />
+      <div className="flex gap-1">
+        <Discord />
+        <Github />
+      </div>
       <h1
         className={`${tenorsans.className} md:text-[8rem] text-[6rem] font-medium text-white leading-none mb-5 md:mb-5`}
       >
@@ -119,7 +96,7 @@ export default function Hero() {
         </button>
         <button
           className=" border-slate-500 border-[0.5px] w-fit text-white p-2 rounded-md backdrop-blur-[1px] text-[0.8rem]"
-          onClick={() => setCardVisible(true)}
+          onClick={() => router.push("/contact")}
         >
           Contact Us
         </button>
