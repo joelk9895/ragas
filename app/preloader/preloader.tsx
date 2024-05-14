@@ -49,17 +49,17 @@ export default function Preloader() {
 
   return (
     <section
-      className="fixed top-0 left-0 w-screen h-screen inset-0 z-[100] bg-black flex flex-col items-center justify-center"
+      className="fixed top-0 left-0 w-screen h-screen inset-0 z-[100] bg-black flex flex-col items-center justify-center md:text-lg text-sm"
       ref={progressBarRef}
     >
-      <div className="flex w-[500px] px-2 py-3 bg-gray-600 rounded-t-lg">
+      <div className="flex md:w-[500px] w-[300px] px-2 py-3 bg-gray-600 rounded-t-lg ">
         <div className="flex gap-2">
           <div className="bg-red-500 rounded-full w-2 h-2"></div>
           <div className="bg-yellow-500 rounded-full w-2 h-2"></div>
           <div className="bg-green-500 rounded-full w-2 h-2"></div>
         </div>
       </div>
-      <div className="flex flex-col min-w-[500px] min-h-[350px] bg-black rounded-b-lg text-white font-mono p-4 border-[0.1px] border-slate-600">
+      <div className="flex flex-col md:w-[500px] w-[300px]  min-h-[350px] bg-black rounded-b-lg text-white font-mono p-4 border-[0.1px] border-slate-600 md:text-lg text-xs ">
         <p>user@ragas ~ % pip install ragas</p>
         <div className="mt-2">
           <span>
