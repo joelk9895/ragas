@@ -7,7 +7,7 @@ export default function Client() {
         engineers rely on{" "}
         <span className={`${tenorsans.className}`}>ragas</span>
       </h2>
-      <div className="marquee">
+      <div className="marquee will-change-transform">
         <div className="flex bg-white w-screen justify-around items-center track">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,7 @@ export default function Client() {
           </svg>
         </div>
         <div
-          className="flex bg-white w-screen justify-around items-center track"
+          className="flex bg-white w-screen justify-around items-center track will-change-transform"
           aria-hidden={true}
         >
           <svg

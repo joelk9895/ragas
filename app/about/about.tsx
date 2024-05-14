@@ -1,4 +1,5 @@
 import { Icon } from "../features/component/featureCard";
+import { TalktoFounder } from "./talk";
 
 export default function About() {
   return (
@@ -40,7 +41,7 @@ export default function About() {
         For support or questions regarding ragas please{" "}
         <a
           className="font-thin italic underline text-yellow-200"
-          href="https://discord.gg/WhPbAP7d"
+          href="https://discord.gg/5qGUJ6mh7C"
         >
           join discord
         </a>{" "}
@@ -49,13 +50,13 @@ export default function About() {
       </p>
       <p className="text-white text-lg font-medium mt-1 mb-10 text-center">
         For enterprise features and collaborations{" "}
-        <a href="" className="font-thin  text-yellow-200">
+        <a
+          href="mailto:founders@explodinggradients.com"
+          className="font-thin  text-yellow-200"
+        >
           email us
         </a>{" "}
-        or{" "}
-        <a href="" className="font-thin  text-yellow-200">
-          talk to founder.
-        </a>
+        or <TalktoFounder />
       </p>
     </section>
   );

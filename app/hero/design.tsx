@@ -19,8 +19,8 @@ export default function Design(): JSX.Element {
     window.devicePixelRatio = 2;
     const scale = window.devicePixelRatio || 1;
     console.log(scale);
-    const canvasWidth = window.outerWidth;
-    const canvasHeight = window.outerHeight;
+    const canvasWidth = window.innerWidth;
+    const canvasHeight = window.innerHeight;
 
     if (window.innerWidth < 720) {
       canvas.width = canvasWidth * scale;
@@ -31,6 +31,8 @@ export default function Design(): JSX.Element {
     } else {
       canvas.width = canvasWidth;
       canvas.height = canvasHeight;
+      canvas.style.width = canvasWidth + "px";
+      canvas.style.height = canvasHeight + "px";
     }
 
     const wordCount = words.length;
@@ -89,7 +91,7 @@ export default function Design(): JSX.Element {
           ctx.moveTo(pathLengthOffset, 50);
           ctx.lineTo(
             ((i + 0.5) * canvas.width) / wordCount,
-            window.innerHeight - 10
+            window.innerHeight - 20
           );
         }
         // Randomly select opacity from predefined values
@@ -126,7 +128,7 @@ export default function Design(): JSX.Element {
           window.innerWidth < 720
             ? (i * canvas.height) / (2 * wordCount) + 32
             : ((i + 0.5) * canvas.width) / wordCount - textWidth / 2 - 5;
-        const rectY2 = window.innerHeight - 20;
+        const rectY2 = window.innerHeight - 40;
         const rectWidth2 = textWidth + 10;
         const rectHeight2 = 30;
 
@@ -168,7 +170,7 @@ export default function Design(): JSX.Element {
           : ctx.fillText(
               currentWords,
               ((i + 0.5) * canvas.width) / wordCount - textWidth / 2,
-              window.innerHeight
+              window.innerHeight - 20
             );
       }
 

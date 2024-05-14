@@ -6,7 +6,7 @@ import Image from "next/image";
 export const Discord = () => {
   return (
     <a
-      href="http://github.com/explodinggradients/ragas"
+      href="https://discord.gg/5qGUJ6mh7C"
       target="__blank"
       className="bg-slate-900 no-underline group cursor-pointer relative  shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block md:-bottom-5"
     >

@@ -4,6 +4,7 @@ import { tenorsans } from "../stack/stack";
 import { Github } from "./github";
 import { Discord } from "./discord";
 import { useRouter } from "next/navigation";
+import Preloader from "../preloader/preloader";
 
 export default function Hero() {
   const handleRedirect = (url: string) => {
@@ -78,6 +79,7 @@ export default function Hero() {
 
   return (
     <div className="flex flex-col w-screen h-screen justify-center items-center absolute z-50">
+      <Preloader />
       <div className="flex gap-1">
         <Discord />
         <Github />
