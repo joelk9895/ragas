@@ -84,9 +84,7 @@ export default function SignupFormDemo() {
     <section className="min-w-screen min-h-screen flex items-center justify-center">
       <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-black">
         <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent my-8 h-[1px] w-full" />
-        <h2 className="font-bold text-xl text-neutral-200">
-          Talk to our founders 🚀
-        </h2>
+        <h2 className="font-bold text-xl text-neutral-200">Talk to founders</h2>
         <p className="text-sm max-w-sm mt-2 text-neutral-300">
           Please provide your company email address to schedule a meeting with
           us.
