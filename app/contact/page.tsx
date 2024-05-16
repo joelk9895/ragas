@@ -53,7 +53,9 @@ export default function SignupFormDemo() {
       if (!isValidEmail(email)) {
         setEmailError("Please enter a valid email address.");
       } else if (!isValidCompanyEmail(email)) {
-        setEmailError("Please enter a valid company email address.");
+        setEmailError(
+          "You have entered a personal email address, please enter your official email."
+        );
       } else {
         setEmailError("");
       }
@@ -86,7 +88,7 @@ export default function SignupFormDemo() {
         <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent my-8 h-[1px] w-full" />
         <h2 className="font-bold text-xl text-neutral-200">Talk to founders</h2>
         <p className="text-sm max-w-sm mt-2 text-neutral-300">
-          Please provide your company email address to schedule a meeting with
+          Please provide your official email address to schedule a meeting with
           us.
         </p>
 
@@ -125,8 +127,9 @@ export default function SignupFormDemo() {
           </div>
 
           <button
-            className="bg-gradient-to-br relative group/btn from-zinc-900 to-zinc-900  block bg-zinc-800 w-full text-white rounded-md h-10 font-medium  shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+            className="bg-gradient-to-br relative group/btn from-zinc-900 to-zinc-900 block bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
+            disabled={!!emailError}
           >
             Get Schedule link &rarr;
             <BottomGradient />
