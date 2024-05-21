@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import { Head } from "next/document";
 export const metadata: Metadata = {
   title: "Ragas",
   description:
@@ -14,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       <body>{children}</body>
     </html>
   );

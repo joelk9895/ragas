@@ -85,7 +85,7 @@ export default function Hero() {
         <Github />
       </div>
       <h1
-        className={`${tenorsans.className} md:text-[8rem] text-[6rem] font-medium text-white leading-none mb-5 md:mb-5`}
+        className={`${tenorsans.className} md:text-[8rem] text-[5rem] font-medium text-white leading-none mb-5 md:mb-5`}
       >
         ragas
       </h1>
