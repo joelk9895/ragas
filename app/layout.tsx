@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+
 export const metadata: Metadata = {
   title: "Ragas",
   description:
@@ -13,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+      {/* <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> */}
       <body>{children}</body>
     </html>
   );
