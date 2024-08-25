@@ -21,6 +21,8 @@ body {
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   background: black;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 @layer utilities {

@@ -12,7 +12,7 @@ import { tweets } from "./tweets/tweets";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center w-screen h-fit bg-black">
+    <main className="flex flex-col items-center w-screen overflow-x-hidden h-fit bg-black">
       <Design />
       <Hero />
       <EvervaultCardDemo />
