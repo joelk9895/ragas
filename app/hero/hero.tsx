@@ -80,16 +80,16 @@ export default function Hero() {
   return (
     <div className="flex flex-col w-screen h-screen justify-center items-center absolute z-50">
       <Preloader />
-      <div className="flex gap-1">
+      {/* <div className="flex gap-1">
         <Discord />
         <Github />
-      </div>
+      </div> */}
       <h1
         className={`${tenorsans.className} md:text-[8rem] text-[5rem] font-medium text-white leading-none mb-5 md:mb-5`}
       >
         ragas
       </h1>
-      <div className="flex gap-2 mb-0 md:mb-5">
+      {/* <div className="flex gap-2 mb-0 md:mb-5">
         <button
           className=" bg-yellow-400 w-fit text-black p-2 rounded-md text-[0.8rem]"
           onClick={() => handleRedirect("http://docs.ragas.io/en/stable")}
@@ -102,7 +102,7 @@ export default function Hero() {
         >
           Contact Us
         </button>
-      </div>
+      </div> */}
       <div
         className=" flex items-center text-slate-300 mt-5 rounded-lg tracking-widest font-extralight text-sm"
         onClick={handleParentClick}
