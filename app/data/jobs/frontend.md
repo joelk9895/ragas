@@ -1,7 +1,8 @@
 ---
 title: "Research Engineer"
 location: "San Francisco, United States"
-date: "2023-10-31"
+salary: "$60k - $120k"
+equity: "0.5% - 2.5%"
 ---
 
 ## About

@@ -1,7 +1,8 @@
 export interface Job {
   title: string;
   location: string;
-  date: string;
+  salary: string;
+  equity: string;
   content: string;
   slug: string;
 }

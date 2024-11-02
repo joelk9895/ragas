@@ -1,6 +1,7 @@
 "use client";
 import { useScroll, motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 const navMenuVariants = {
   open: {
@@ -30,8 +31,26 @@ export default function Nav({ jobCount }: { jobCount: number }) {
   const menuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const updateHamburgerVisibility = () => {
+      const isSmallScreen = window.innerWidth < 768;
+      setShowHamburger(isSmallScreen || scrollY.get() > window.innerHeight);
+    };
+
+    // Run once on component mount
+    updateHamburgerVisibility();
+
+    window.addEventListener("resize", updateHamburgerVisibility);
+
+    return () => {
+      window.removeEventListener("resize", updateHamburgerVisibility);
+    };
+  }, [scrollY]);
+
+  useEffect(() => {
     return scrollY.onChange((latest) => {
-      setShowHamburger(latest > window.innerHeight);
+      if (window.innerWidth >= 768) {
+        setShowHamburger(latest > window.innerHeight);
+      }
     });
   }, [scrollY]);
 
@@ -77,30 +96,37 @@ export default function Nav({ jobCount }: { jobCount: number }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="flex items-center space-x-4"
+            className="hidden md:flex items-center space-x-4"
           >
             <a
-              href="/docs"
+              href="https://docs.ragas.io/"
+              target="_blank"
               className="bg-black text-white font-semibold px-4 py-1 rounded-lg border border-white/20"
             >
               Docs
             </a>
             <a
-              href="/blog"
+              href="https://blog.ragas.io/"
+              target="_blank"
               className="hover:text-gray-300 relative font-semibold"
             >
               Blog
             </a>
-            <a href="/" className="hover:text-gray-300 relative font-semibold">
+            <a
+              href="http://github.com/explodinggradients/ragas"
+              target="__blank"
+              className="hover:text-gray-300 relative font-semibold"
+            >
               Github
             </a>
             <a
-              href="/community"
+              href="https://discord.gg/5qGUJ6mh7C"
+              target="__blank"
               className="hover:text-gray-300 relative font-semibold"
             >
               Community
             </a>
-            <a
+            <Link
               href="/careers"
               className="hover:text-gray-300 relative font-semibold pr-2"
             >
@@ -108,7 +134,7 @@ export default function Nav({ jobCount }: { jobCount: number }) {
               <span className="text-xs text-center absolute -top-3 -right-0 bg-black text-yellow-400 p-1 w-[20px] h-[20px] aspect-square m-0 rounded-full">
                 {jobCount}
               </span>
-            </a>
+            </Link>
             <a
               href="/contact"
               className="bg-yellow-400 text-black font-semibold px-4 py-1 rounded-lg hover:bg-yellow-300"
@@ -137,12 +163,13 @@ export default function Nav({ jobCount }: { jobCount: number }) {
                   initial="closed"
                   animate="open"
                   exit="closed"
-                  className="absolute -top-10 -right-10 bg-black border border-white/10 rounded-lg p-6 w-64"
+                  className="absolute -top-10 -right-10 bg-black border border-white/10 rounded-lg p-6 w-64 overflow-hidden"
                 >
                   <ul className="flex flex-col space-y-4 text-white">
                     <li>
                       <a
-                        href="/docs"
+                        href="https://docs.ragas.io/"
+                        target="_blank"
                         className="bg-black text-white font-semibold px-4 py-1 rounded-lg border border-white/20"
                       >
                         Docs
@@ -150,27 +177,33 @@ export default function Nav({ jobCount }: { jobCount: number }) {
                     </li>
                     <li>
                       <a
-                        href="/blog"
+                        href="https://blog.ragas.io/"
+                        target="_blank"
                         className="hover:text-gray-300 font-semibold"
                       >
                         Blog
                       </a>
                     </li>
                     <li>
-                      <a href="/" className="hover:text-gray-300 font-semibold">
+                      <a
+                        href="http://github.com/explodinggradients/ragas"
+                        target="_blank"
+                        className="hover:text-gray-300 font-semibold"
+                      >
                         Github
                       </a>
                     </li>
                     <li>
                       <a
-                        href="/community"
+                        href="https://discord.gg/5qGUJ6mh7C"
+                        target="_blank"
                         className="hover:text-gray-300 font-semibold"
                       >
                         Community
                       </a>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="/careers"
                         className="hover:text-gray-300 font-semibold"
                       >
@@ -178,7 +211,7 @@ export default function Nav({ jobCount }: { jobCount: number }) {
                         <span className="text-xs bg-red-600 text-white ml-2 p-1 rounded-full">
                           {jobCount}
                         </span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <a

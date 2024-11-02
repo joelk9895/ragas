@@ -16,7 +16,8 @@ export function getAllJobs(): Job[] {
     return {
       title: data.title as string,
       location: data.location as string,
-      date: data.date as string,
+      salary: data.salary as string,
+      equity: data.equity as string,
       content,
       slug: filename.replace(".md", ""),
     };
@@ -37,7 +38,8 @@ export function getJobBySlug(slug: string): Job | null {
   return {
     title: data.title as string,
     location: data.location as string,
-    date: data.date as string,
+    salary: data.salary as string,
+    equity: data.equity as string,
     content,
     slug,
   };

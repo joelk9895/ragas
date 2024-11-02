@@ -19,10 +19,10 @@ export default async function Careers() {
           complex systems. Using a combination of AI and human ingenuity, they
           will out-smart and out-engineer the best pure-AI system. We are a
           group of researchers and engineers. We build software and models to
-          invent at the edge of what&apos;s useful and what&apos;s possible. Our work has
-          already improved the lives of hundreds of thousands of programmers. If
-          this excites you, we&apos;d love to hear from you. — Aman, Sualeh, Michael,
-          Arvid, and the entire Anysphere team
+          invent at the edge of what&apos;s useful and what&apos;s possible. Our
+          work has already improved the lives of hundreds of thousands of
+          programmers. If this excites you, we&apos;d love to hear from you. —
+          Aman, Sualeh, Michael, Arvid, and the entire Anysphere team
         </p>
       </section>
       <h2 className="text-2xl font-semibold">Open Positions</h2>
@@ -36,7 +36,8 @@ export default async function Careers() {
             <h2 className="text-2xl font-semibold">{job.title}</h2>
             <p className="text-gray-400">
               <span className="text-yellow-400">{job.location}</span> •{" "}
-              {job.date}
+              <span className="text-yellow-200">{job.salary}</span> •{" "}
+              {job.equity}
             </p>
           </Link>
         ))}
