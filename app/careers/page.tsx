@@ -12,16 +12,16 @@ export default async function Careers() {
         <p className="text-lg">
           Engineering Genius Anysphere is an applied research lab working on
           automating coding. Our approach is to build the engineer of the
-          future: a human-AI programmer that's an order of magnitude more
+          future: a human-AI programmer that&apos;s an order of magnitude more
           effective than any one programmer. This hybrid engineer will have
           effortless control over their codebase and no low-entropy keystrokes.
           They will iterate at the speed of their judgment, even in the most
           complex systems. Using a combination of AI and human ingenuity, they
           will out-smart and out-engineer the best pure-AI system. We are a
           group of researchers and engineers. We build software and models to
-          invent at the edge of what's useful and what's possible. Our work has
+          invent at the edge of what&apos;s useful and what&apos;s possible. Our work has
           already improved the lives of hundreds of thousands of programmers. If
-          this excites you, we'd love to hear from you. — Aman, Sualeh, Michael,
+          this excites you, we&apos;d love to hear from you. — Aman, Sualeh, Michael,
           Arvid, and the entire Anysphere team
         </p>
       </section>
