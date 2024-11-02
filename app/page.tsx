@@ -12,6 +12,7 @@ import Nav from "./nav/nav";
 import StackImage from "./stack/stack";
 import Tweets from "./tweets/tweet";
 import { tweets } from "./tweets/tweets";
+import Preloader from "./preloader/preloader";
 
 export default function Home() {
   const jobsDirectory = path.join(process.cwd(), "app/data/jobs");
@@ -20,6 +21,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center w-screen overflow-x-hidden h-fit bg-black">
+      <Preloader />
       <Nav jobCount={jobCount} />
       <Design />
       <Hero />

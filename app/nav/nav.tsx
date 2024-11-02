@@ -60,10 +60,14 @@ export default function Nav({ jobCount }: { jobCount: number }) {
     <motion.nav
       animate={{
         x: showHamburger ? window.innerWidth / 2 - 80 : 0,
+        y: showHamburger ? -100 : 0,
         scale: showHamburger ? 0.8 : 1,
       }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="flex fixed top-32 items-center justify-center bg-white/20 border border-white/10 backdrop-blur-md shadow-lg w-fit h-16 px-6 rounded-full text-white z-[10000]"
+      style={{
+        transition: "width 0.3s ease",
+      }}
+      className="flex fixed top-32 items-center justify-center bg-white/20 border border-white/10 backdrop-blur-md shadow-lg w-fit h-16 px-6 rounded-full text-white z-[999]"
     >
       <AnimatePresence mode="wait">
         {!showHamburger ? (
@@ -75,14 +79,26 @@ export default function Nav({ jobCount }: { jobCount: number }) {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="flex items-center space-x-4"
           >
-            <a href="/" className="hover:text-gray-300 relative font-semibold">
-              github
+            <a
+              href="/docs"
+              className="bg-black text-white font-semibold px-4 py-1 rounded-lg border border-white/20"
+            >
+              Docs
             </a>
             <a
-              href="/discord"
+              href="/blog"
               className="hover:text-gray-300 relative font-semibold"
             >
-              Discord
+              Blog
+            </a>
+            <a href="/" className="hover:text-gray-300 relative font-semibold">
+              Github
+            </a>
+            <a
+              href="/community"
+              className="hover:text-gray-300 relative font-semibold"
+            >
+              Community
             </a>
             <a
               href="/careers"
@@ -94,14 +110,8 @@ export default function Nav({ jobCount }: { jobCount: number }) {
               </span>
             </a>
             <a
-              href="/docs"
-              className="bg-yellow-400 text-black font-semibold px-4 py-1 rounded-lg hover:bg-yellow-300"
-            >
-              Docs
-            </a>
-            <a
               href="/contact"
-              className="bg-black border border-white/10 text-white font-semibold px-4 py-1 rounded-lg "
+              className="bg-yellow-400 text-black font-semibold px-4 py-1 rounded-lg hover:bg-yellow-300"
             >
               Contact Us
             </a>
@@ -109,9 +119,9 @@ export default function Nav({ jobCount }: { jobCount: number }) {
         ) : (
           <motion.div
             key="hamburger"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             onClick={toggleMenu}
             className="flex flex-col items-center justify-center space-y-1 cursor-pointer relative"
@@ -131,24 +141,32 @@ export default function Nav({ jobCount }: { jobCount: number }) {
                 >
                   <ul className="flex flex-col space-y-4 text-white">
                     <li>
+                      <a
+                        href="/docs"
+                        className="bg-black text-white font-semibold px-4 py-1 rounded-lg border border-white/20"
+                      >
+                        Docs
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/blog"
+                        className="hover:text-gray-300 font-semibold"
+                      >
+                        Blog
+                      </a>
+                    </li>
+                    <li>
                       <a href="/" className="hover:text-gray-300 font-semibold">
                         Github
                       </a>
                     </li>
                     <li>
                       <a
-                        href="/discord"
+                        href="/community"
                         className="hover:text-gray-300 font-semibold"
                       >
-                        Discord
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/docs"
-                        className="hover:text-gray-300 font-semibold"
-                      >
-                        Docs
+                        Community
                       </a>
                     </li>
                     <li>
