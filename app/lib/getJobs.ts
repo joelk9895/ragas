@@ -29,6 +29,7 @@ export function getJobCount(): number {
 }
 
 export function getJobBySlug(slug: string): Job | null {
+  slug = slug.replace(/%20/g, " ");
   const filePath = path.join(jobsDirectory, `${slug}.md`);
   if (!fs.existsSync(filePath)) return null;
 
