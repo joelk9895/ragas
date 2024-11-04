@@ -1,8 +1,9 @@
-// app/api/og/[slug]/route.ts
 import { ImageResponse } from "@vercel/og";
 import { getJobBySlug } from "@/app/lib/getJobs";
+import fs from "fs";
+import path from "path";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export async function GET(
   request: Request,
@@ -13,6 +14,10 @@ export async function GET(
   if (!job) {
     return new Response("Not Found", { status: 404 });
   }
+
+  // Load the font file from the local public directory
+  const fontPath = path.join(process.cwd(), "public/fonts/Satoshi-Regular.ttf");
+  const fontData = fs.readFileSync(fontPath);
 
   return new ImageResponse(
     (
@@ -26,7 +31,7 @@ export async function GET(
           alignItems: "center",
           justifyContent: "center",
           flexDirection: "column",
-          fontFamily: "Arial, sans-serif",
+          fontFamily: "Satoshi, sans-serif",
         }}
       >
         <h1
@@ -55,6 +60,14 @@ export async function GET(
     {
       width: 1200,
       height: 630,
+      fonts: [
+        {
+          name: "Satoshi",
+          data: fontData,
+          style: "normal",
+          weight: 400,
+        },
+      ],
     }
   );
 }
