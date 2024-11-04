@@ -1,9 +1,9 @@
 import { Job } from "@/app/types/job";
-import { getJobBySlug } from "@/app/lib/getJobs";
+import { getJobBySlug, getAllJobs } from "@/app/lib/getJobs";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Link from "next/link"; // For navigation
+import Link from "next/link";
 
 interface JobPageProps {
   params: { slug: string };
@@ -30,15 +30,23 @@ export default function JobPage({ params }: JobPageProps) {
       </h1>
       <p className="text-gray-400 mb-6 sm:mb-8 text-center sm:text-left flex flex-col sm:flex-row items-center sm:space-x-2">
         <span className="text-yellow-400">{job.location}</span>
-        <span className="hidden sm:inline">•</span>{" "}
-        <span>{job.salary}</span>
+        <span className="hidden sm:inline">•</span> <span>{job.salary}</span>
         <span className="hidden sm:inline">•</span>
         <span>{job.equity}</span>
       </p>
-      <hr className="border-gray-700 w-full max-w-2xl mb-6" />{" "}
+      <hr className="border-gray-700 w-full max-w-2xl mb-6" />
       <div className="prose prose-invert prose-lg max-w-2xl text-sm sm:text-base leading-relaxed">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{job.content}</ReactMarkdown>
       </div>
     </main>
   );
+}
+
+// Use `generateStaticParams` instead of `generateStaticPaths`
+export async function generateStaticParams() {
+  const jobs = getAllJobs();
+
+  return jobs.map((job) => ({
+    slug: job.slug,
+  }));
 }
