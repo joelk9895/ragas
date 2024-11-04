@@ -13,8 +13,7 @@ export default function Design(): JSX.Element {
       return;
     }
 
-    const sentence =
-      "building the opensource standard for evaluating LLM applications";
+    const sentence = "Supercharge Your LLM Application Evaluations";
     const words = sentence.split(" ");
     window.devicePixelRatio = 2;
     const scale = window.devicePixelRatio || 1;
@@ -81,7 +80,7 @@ export default function Design(): JSX.Element {
         if (window.innerWidth < 720) {
           ctx.moveTo(
             20,
-            ((currentWordIndex + 0.5) * canvas.height) / 2 / wordCount
+            ((currentWordIndex + 0.3) * canvas.height) / 2 / wordCount
           );
           ctx.lineTo(
             window.innerWidth - textWidth,
