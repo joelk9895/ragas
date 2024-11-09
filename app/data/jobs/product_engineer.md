@@ -1,8 +1,8 @@
 ---
-title: "Founding Product Engineer"
+title: "Product Engineer"
 location: "Remote, Earth"
 salary: "$60k - $120k"
-equity: "1% - 5%"
+equity: "0.5% - 2.5%"
 ---
 
 With Ragas we are building the opensource standard for evaluating any LLM application. It is already being used by engineers from companies like Google, Amazon, Databricks and many more. Now we are building out the product to make it better experience for developers to evaluate their applications.
