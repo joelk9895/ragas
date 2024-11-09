@@ -11,7 +11,7 @@ export default function Careers() {
         <br />
         <br /> Write to us on{" "}
         <a
-          href="mailto:founders@explodinggradients.com"
+          href="mailto:team@explodinggradients.com"
           className="italic font-bold underline"
         >
           founders@explodinggradients.com.
