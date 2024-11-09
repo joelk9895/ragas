@@ -9,7 +9,13 @@ interface JobPageProps {
   params: { slug: string };
 }
 
-// This function generates metadata for each page based on the job data
+export async function generateStaticParams() {
+  const jobs = getAllJobs();
+  return jobs.map((job) => ({
+    slug: job.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: JobPageProps) {
   const job = getJobBySlug(params.slug);
   if (!job) return {};
@@ -22,7 +28,7 @@ export async function generateMetadata({ params }: JobPageProps) {
       description: `Apply for the ${job.title} position at Ragas.io. Location: ${job.location}. Salary: ${job.salary}. Equity: ${job.equity}.`,
       images: [
         {
-          url: `/api/og/${params.slug}`, // Dynamic URL for each job post
+          url: `/api/og/${params.slug}`,
           width: 1200,
           height: 630,
           alt: job.title,
